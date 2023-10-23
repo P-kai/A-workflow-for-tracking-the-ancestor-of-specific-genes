@@ -1,0 +1,10 @@
+python bannal.py -h
+
+bannel is a program for downloading genome or sample information
+     --geo_download input a key word
+                    example:  bannel.py --geo_download 'Escherichia'
+     --inf_download input a file with assembly_accession number in lines
+                    example:  bannel.py --inf_download SAM_list.tab
+     -o output file location
+     --get_db    get database information of NCBI genbank
+                 please run it bannal in first run
