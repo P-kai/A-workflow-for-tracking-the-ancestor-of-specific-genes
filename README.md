@@ -59,3 +59,11 @@ GCA_900585585.1
 ``muscle -in tmexCD-toprJ_variants.fa -out tmexCD-toprJ_variants.aln``  
 #Create a phylogenetic tree.  
 ``raxml-ng --search1 --msa tmexCD-toprJ_variants.aln --model GTR+G``  
+
+### Constructing a phylogenetic tree of different tmexCD-toprJ-positive strains using "prokka", "Roary" and "Fasttree".
+#Using Prokka annotate the bacterial genomes.  
+``prokka bacteria_genome.fasta --outdir annotation/ --prefix bacteria_genome --kingdom Bacteria``  
+#Generate core gene alignment from gff files using roary.  
+``roary -f output_dir -e -n -v ./gff/*.gff``  
+#Create a phylogenetic tree using fasttree.  
+``fasttree -nt -gtr core_gene_alignment.aln > mytree``
